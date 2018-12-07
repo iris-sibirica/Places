@@ -40,6 +40,8 @@
 		8EBED34C21BA2F57002FEB75 /* UIViewController+SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED34B21BA2F57002FEB75 /* UIViewController+SegueIdentifier.swift */; };
 		8EBED35121BA36AD002FEB75 /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED35021BA36AD002FEB75 /* MapPoint.swift */; };
 		8EBED35721BA80E1002FEB75 /* ResponseError in Resources */ = {isa = PBXBuildFile; fileRef = 8EBED35621BA80E1002FEB75 /* ResponseError */; };
+		8EBED36421BA9D01002FEB75 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED36321BA9D01002FEB75 /* URLSessionDataTaskMock.swift */; };
+		8EBED36621BA9D48002FEB75 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED36521BA9D48002FEB75 /* URLSessionMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		8EBED34B21BA2F57002FEB75 /* UIViewController+SegueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SegueIdentifier.swift"; sourceTree = "<group>"; };
 		8EBED35021BA36AD002FEB75 /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		8EBED35621BA80E1002FEB75 /* ResponseError */ = {isa = PBXFileReference; explicitFileType = text.json; path = ResponseError; sourceTree = "<group>"; };
+		8EBED36321BA9D01002FEB75 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
+		8EBED36521BA9D48002FEB75 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +368,7 @@
 		8EBED35421BA806E002FEB75 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8EBED36121BA9C43002FEB75 /* Mocked */,
 				8EBED35521BA808B002FEB75 /* Resources */,
 			);
 			path = Data;
@@ -375,6 +380,15 @@
 				8EBED35621BA80E1002FEB75 /* ResponseError */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		8EBED36121BA9C43002FEB75 /* Mocked */ = {
+			isa = PBXGroup;
+			children = (
+				8EBED36321BA9D01002FEB75 /* URLSessionDataTaskMock.swift */,
+				8EBED36521BA9D48002FEB75 /* URLSessionMock.swift */,
+			);
+			path = Mocked;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +462,7 @@
 					};
 					8E76513221B5CFE800A297A0 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 8E76511B21B5CFE600A297A0;
 					};
 					8E76513D21B5CFE900A297A0 = {
@@ -545,6 +560,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBED36621BA9D48002FEB75 /* URLSessionMock.swift in Sources */,
+				8EBED36421BA9D01002FEB75 /* URLSessionDataTaskMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +764,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PlacesDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -756,6 +774,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jcvokic.PlacesDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlacesDemo.app/PlacesDemo";
@@ -767,6 +786,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PlacesDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
