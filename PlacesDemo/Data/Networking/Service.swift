@@ -15,8 +15,9 @@ protocol ServiceProtocol {
     
     /// This is the environment used by the service.
     var environment: Environment { get }
-    /// Initialize a new service with specified environment.
-    init(environment: Environment)
+    var session: NetworkSession { get }
+    /// Initialize a new service with specified environmentand session
+    init(environment: Environment, session: NetworkSession)
     /// Execute a NetworkRequest and return a NetworkResponse.
     ///
     /// - Parameter request: request to execute
@@ -28,18 +29,12 @@ protocol ServiceProtocol {
 class Service: ServiceProtocol {
     
     internal var environment: Environment
-    var session: URLSession {
-        let configuration = URLSessionConfiguration.default
-        configuration.requestCachePolicy = environment.cachePolicy
-        configuration.urlCache = nil
-        return URLSession.init(configuration: configuration)
-    }
+    var session: NetworkSession
     
-    /// Initialize a new service with given environment
-    ///
-    /// - Parameter environment: environment
-    required public init(environment: Environment) {
+    /// Initialize a new service with given environment and session
+    required public init(environment: Environment, session: NetworkSession = URLSession.shared) {
         self.environment = environment
+        self.session = session
     }
     
     /// Execute a `NetworkRequest` and return a completion block with a`NetworkResponse`
@@ -50,14 +45,12 @@ class Service: ServiceProtocol {
     func execute(request: NetworkRequest, completion: @escaping (NetworkResponse) -> ()) {
         guard let urlRequest = prepareUrlRequest(from: request) else { return }
         
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        session.loadData(request: urlRequest, completion: { (data, response, error) in
             //print(self.debugHTTPURLResponse(response as? HTTPURLResponse))
-            let networkResponse = NetworkResponse(statusCode: (response as? HTTPURLResponse)?.statusCode,
-                                                  data: data,
-                                                  error: NetworkError.underlying(error))
+            let networkResponse = NetworkResponse(statusCode: (response as? HTTPURLResponse)?.statusCode, data: data, error: NetworkError.underlying(error))
             //print(networkResponse.debugDescription)
             completion(networkResponse)
-        }.resume()
+        })
     }
 }
 
@@ -89,5 +82,14 @@ extension Service {
         let statusCode = response.statusCode
         let headers = response.allHeaderFields as! [String: String]
         return "🐱 \nStatus code: \(statusCode). \nHeaders: \(headers) \n🐱"
+    }
+}
+
+extension URLSession: NetworkSession {
+    func loadData(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let task = dataTask(with: request) { (data, response, error) in
+            completion(data, response, error)
+        }
+        task.resume()
     }
 }
