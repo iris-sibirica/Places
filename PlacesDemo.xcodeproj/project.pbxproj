@@ -33,7 +33,6 @@
 		8E76518221B60E0500A297A0 /* DataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E76518121B60E0500A297A0 /* DataModule.swift */; };
 		8E76518421B60E8300A297A0 /* PoisModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E76518321B60E8300A297A0 /* PoisModule.swift */; };
 		8E76518621B60F3600A297A0 /* PoisLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E76518521B60F3600A297A0 /* PoisLocalDataSource.swift */; };
-		8EBED33921B9CE6C002FEB75 /* CashePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED33821B9CE6C002FEB75 /* CashePolicy.swift */; };
 		8EBED33C21BA26B3002FEB75 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED33B21BA26B3002FEB75 /* DetailsViewController.swift */; };
 		8EBED34321BA2ACE002FEB75 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED34221BA2ACE002FEB75 /* DetailsViewModel.swift */; };
 		8EBED34721BA2BBE002FEB75 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED34621BA2BBE002FEB75 /* Injectable.swift */; };
@@ -92,7 +91,6 @@
 		8E76518121B60E0500A297A0 /* DataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModule.swift; sourceTree = "<group>"; };
 		8E76518321B60E8300A297A0 /* PoisModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisModule.swift; sourceTree = "<group>"; };
 		8E76518521B60F3600A297A0 /* PoisLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisLocalDataSource.swift; sourceTree = "<group>"; };
-		8EBED33821B9CE6C002FEB75 /* CashePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashePolicy.swift; sourceTree = "<group>"; };
 		8EBED33B21BA26B3002FEB75 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		8EBED34221BA2ACE002FEB75 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		8EBED34621BA2BBE002FEB75 /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				8E72480621B840370043EA20 /* Context.swift */,
-				8EBED33821B9CE6C002FEB75 /* CashePolicy.swift */,
 				8E76516A21B5DCA100A297A0 /* Constants.swift */,
 				8E7247FE21B7295A0043EA20 /* NetworkRequest.swift */,
 				8E72480421B732880043EA20 /* NetworkResponse.swift */,
@@ -515,7 +512,6 @@
 			files = (
 				8E76512221B5CFE600A297A0 /* OverviewViewController.swift in Sources */,
 				8E72480321B72E420043EA20 /* Service.swift in Sources */,
-				8EBED33921B9CE6C002FEB75 /* CashePolicy.swift in Sources */,
 				8E72480721B840370043EA20 /* Context.swift in Sources */,
 				8E76512021B5CFE600A297A0 /* AppDelegate.swift in Sources */,
 				8E76515F21B5D3DB00A297A0 /* PointOfInterest.swift in Sources */,

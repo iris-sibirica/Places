@@ -35,7 +35,7 @@ protocol NetworkRequestProtocol {
     var headers: [String: Any]? { get }
     /// This is the default cache policy used for this request.
     /// If not set related `Service` policy is used.
-    var cachePolicy: CashePolicy? { get set }
+    var cachePolicy: NSURLRequest.CachePolicy? { get set }
     /// This is the time interval of the request.
     /// If not set related `Service` timeout is used.
     var timeout: TimeInterval? { get set }
@@ -48,8 +48,8 @@ class NetworkRequest: NetworkRequestProtocol {
     var path: String
     var method: HTTPMethod
     var parameters: [String: String]
-    var headers: [String: Any]? //Any??
-    var cachePolicy: CashePolicy? = .reloadIgnoringLocalCacheData
+    var headers: [String: Any]?
+    var cachePolicy: NSURLRequest.CachePolicy? = .reloadIgnoringLocalCacheData
     var timeout: TimeInterval?
     var dataType: DataType = .JSON
     
