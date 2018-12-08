@@ -43,6 +43,8 @@
 		8EBED36621BA9D48002FEB75 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED36521BA9D48002FEB75 /* NetworkSessionMock.swift */; };
 		8EC2A19D21BAA21C00C8E525 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2A19C21BAA21C00C8E525 /* ServiceTests.swift */; };
 		8EDF46B421BAABCC00F3C9C2 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46B321BAABCB00F3C9C2 /* NetworkSessionProtocol.swift */; };
+		8EDF46B621BC708A00F3C9C2 /* URLSession+LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46B521BC708A00F3C9C2 /* URLSession+LoadData.swift */; };
+		8EDF46B821BC712500F3C9C2 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46B721BC712500F3C9C2 /* ServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		8EBED36521BA9D48002FEB75 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
 		8EC2A19C21BAA21C00C8E525 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		8EDF46B321BAABCB00F3C9C2 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
+		8EDF46B521BC708A00F3C9C2 /* URLSession+LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+LoadData.swift"; sourceTree = "<group>"; };
+		8EDF46B721BC712500F3C9C2 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +259,7 @@
 			children = (
 				8E76517821B605C100A297A0 /* PoisDataSource.swift */,
 				8EDF46B321BAABCB00F3C9C2 /* NetworkSessionProtocol.swift */,
+				8EDF46B721BC712500F3C9C2 /* ServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				8E72480C21B8ACF10043EA20 /* URLRequest+Encode.swift */,
+				8EDF46B521BC708A00F3C9C2 /* URLSession+LoadData.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -510,6 +516,8 @@
 				8E76516421B5D90500A297A0 /* NetworkError.swift in Sources */,
 				8E72480521B732880043EA20 /* NetworkResponse.swift in Sources */,
 				8E72480D21B8ACF10043EA20 /* URLRequest+Encode.swift in Sources */,
+				8EDF46B821BC712500F3C9C2 /* ServiceProtocol.swift in Sources */,
+				8EDF46B621BC708A00F3C9C2 /* URLSession+LoadData.swift in Sources */,
 				8E72480B21B8A6BE0043EA20 /* PoisResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

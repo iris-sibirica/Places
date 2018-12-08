@@ -27,6 +27,6 @@ struct API {
         static let Latitude = 52.500342
         static let Longitude = 13.425170
     }
-    static let clientID = "YOUR_CLIENT_ID"
-    static let clientSecret = "YOUR_CLIENT_SECRET"
+    static let clientID = "PTHSIOQBHG0LZVQR54U2KRXFL1VUMQROOU2NRZ23ULW30KNP"
+    static let clientSecret = "GMQKP3PB3WPWQ3M1V3GEFXE33YTD0JLBFQKFH4BHPJ1JQB1S"
 }
