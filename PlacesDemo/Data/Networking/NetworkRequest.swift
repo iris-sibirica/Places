@@ -54,11 +54,6 @@ class NetworkRequest: NetworkRequestProtocol {
     var dataType: DataType = .JSON
     
     /// Initialize a new request
-    ///
-    /// - Parameters:
-    ///   - method: HTTP Method request (if not specified, `.get` is used)
-    ///   - path: path of the request
-    ///   - params: paramters to replace in endpoint
     init(method: HTTPMethod = .get, path: String, parameters: [String: String]) {
         self.method = method
         self.path = path

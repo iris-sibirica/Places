@@ -45,6 +45,7 @@
 		8EDF46B421BAABCC00F3C9C2 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46B321BAABCB00F3C9C2 /* NetworkSessionProtocol.swift */; };
 		8EDF46B621BC708A00F3C9C2 /* URLSession+LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46B521BC708A00F3C9C2 /* URLSession+LoadData.swift */; };
 		8EDF46B821BC712500F3C9C2 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46B721BC712500F3C9C2 /* ServiceProtocol.swift */; };
+		8EDF46BB21BC864200F3C9C2 /* OptionalStringCoalescingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46BA21BC864200F3C9C2 /* OptionalStringCoalescingOperator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		8EDF46B321BAABCB00F3C9C2 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
 		8EDF46B521BC708A00F3C9C2 /* URLSession+LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+LoadData.swift"; sourceTree = "<group>"; };
 		8EDF46B721BC712500F3C9C2 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		8EDF46BA21BC864200F3C9C2 /* OptionalStringCoalescingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringCoalescingOperator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		8E76515121B5D03500A297A0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8EDF46B921BC860100F3C9C2 /* Helpers */,
 				8EBED33A21B9DCA8002FEB75 /* Extensions */,
 				8E76518021B60DF300A297A0 /* Modules */,
 				8E76515A21B5D2A500A297A0 /* Networking */,
@@ -384,6 +387,14 @@
 			path = Mocked;
 			sourceTree = "<group>";
 		};
+		8EDF46B921BC860100F3C9C2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8EDF46BA21BC864200F3C9C2 /* OptionalStringCoalescingOperator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +501,7 @@
 			files = (
 				8E76512221B5CFE600A297A0 /* OverviewViewController.swift in Sources */,
 				8E72480321B72E420043EA20 /* Service.swift in Sources */,
+				8EDF46BB21BC864200F3C9C2 /* OptionalStringCoalescingOperator.swift in Sources */,
 				8E72480721B840370043EA20 /* Context.swift in Sources */,
 				8E76512021B5CFE600A297A0 /* AppDelegate.swift in Sources */,
 				8E76515F21B5D3DB00A297A0 /* PointOfInterest.swift in Sources */,
