@@ -57,3 +57,9 @@ extension NetworkError: LocalizedError {
         }
     }
 }
+
+extension NetworkError: Equatable {
+    static func == (lhs: NetworkError, rhs: NetworkError) -> Bool {
+        return lhs.errorDescription == rhs.errorDescription
+    }
+}

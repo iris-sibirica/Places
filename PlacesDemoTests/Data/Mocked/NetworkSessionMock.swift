@@ -10,11 +10,19 @@ import Foundation
 @testable import PlacesDemo
 
 class NetworkSessionMock: NetworkSession {
-    var data: Data?
-    var response: URLResponse?
-    var error: Error?
+    private (set) var lastURL: URL?
+    let data: Data?
+    let urlResponse: URLResponse?
+    let error: Error?
+    
+    init(data: Data?, urlResponse: URLResponse?, error: Error?) {
+        self.data = data
+        self.urlResponse = urlResponse
+        self.error = error
+    }
     
     func loadData(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        completion(data, response, error)
+        lastURL = request.url
+        completion(data, urlResponse, error)
     }
 }

@@ -46,6 +46,7 @@
 		8EDF46B621BC708A00F3C9C2 /* URLSession+LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46B521BC708A00F3C9C2 /* URLSession+LoadData.swift */; };
 		8EDF46B821BC712500F3C9C2 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46B721BC712500F3C9C2 /* ServiceProtocol.swift */; };
 		8EDF46BB21BC864200F3C9C2 /* OptionalStringCoalescingOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46BA21BC864200F3C9C2 /* OptionalStringCoalescingOperator.swift */; };
+		8EDF46BD21BEB6C200F3C9C2 /* URL+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF46BC21BEB6C100F3C9C2 /* URL+Subscript.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		8EDF46B521BC708A00F3C9C2 /* URLSession+LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+LoadData.swift"; sourceTree = "<group>"; };
 		8EDF46B721BC712500F3C9C2 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 		8EDF46BA21BC864200F3C9C2 /* OptionalStringCoalescingOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringCoalescingOperator.swift; sourceTree = "<group>"; };
+		8EDF46BC21BEB6C100F3C9C2 /* URL+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Subscript.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 			children = (
 				8E72480C21B8ACF10043EA20 /* URLRequest+Encode.swift */,
 				8EDF46B521BC708A00F3C9C2 /* URLSession+LoadData.swift */,
+				8EDF46BC21BEB6C100F3C9C2 /* URL+Subscript.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				8E7247FF21B7295A0043EA20 /* NetworkRequest.swift in Sources */,
 				8E76516D21B5E7DC00A297A0 /* TableViewCell.swift in Sources */,
 				8E76517B21B606AD00A297A0 /* PoisRemoteDataSource.swift in Sources */,
+				8EDF46BD21BEB6C200F3C9C2 /* URL+Subscript.swift in Sources */,
 				8EBED33C21BA26B3002FEB75 /* DetailsViewController.swift in Sources */,
 				8E76518621B60F3600A297A0 /* PoisLocalDataSource.swift in Sources */,
 				8E76516421B5D90500A297A0 /* NetworkError.swift in Sources */,
