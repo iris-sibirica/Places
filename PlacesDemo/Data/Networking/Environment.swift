@@ -26,7 +26,7 @@ final class Environment {
     /// These are the global headers
     private(set) var headers: [String: Any]
     /// Cache policy you want apply to each request done with this service
-    private(set) var cachePolicy: URLRequest.CachePolicy = .reloadIgnoringLocalCacheData
+    private(set) var cachePolicy: URLRequest.CachePolicy = .returnCacheDataElseLoad
     /// Global timeout for any request (it can be overriden in NetworkRequest)
     public var timeout: TimeInterval = 15.0
     

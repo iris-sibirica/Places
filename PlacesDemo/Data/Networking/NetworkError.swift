@@ -12,22 +12,22 @@ import Foundation
 enum NetworkError: Error {
     
     /// Indicates a response failed to map to a JSON structure.
-    case jsonMapping//(NetworkResponse)
+    case jsonMapping
     /// Indicates a response failed to map to a String.
-    case stringMapping//(NetworkResponse)
+    case stringMapping
     /// Indicates a response failed to map to a Decodable object.
-    case objectMapping//(Error, NetworkResponse)
+    case objectMapping
     /// Indicates a response failed with an invalid HTTP status code.
-    case statusCode//(NetworkResponse)
+    case statusCode
     /// Indicates a response failed due to an underlying `Error`.
     case underlying(Error?)
     /// Indicates that an `Endpoint` failed to encode the parameters for the `URLRequest`.
     case parameterEncoding(Error)
-    /// Indicates that data in response is nil
+    /// Indicates that data in response is nil.
     case dataIsNil
-    
+    /// Indicates that `URLResponse` is nil.
     case responseIsNil
-    
+    /// Indicates parsing error.
     case parsingError
 }
 
@@ -57,4 +57,3 @@ extension NetworkError: LocalizedError {
         }
     }
 }
-

@@ -22,9 +22,10 @@ class Service: ServiceProtocol {
         guard let urlRequest = prepareURLRequest(from: request) else { return }
         
         session.loadData(request: urlRequest, completion: { (data, response, error) in
-            //print(self.debugHTTPURLResponse(response as? HTTPURLResponse))
+            print(self.debugHTTPURLResponse(response as? HTTPURLResponse))
             
             let networkResponse = NetworkResponse(statusCode: (response as? HTTPURLResponse)?.statusCode, data: data, error: NetworkError.underlying(error))
+            print(networkResponse.debugDescription)
             completion(networkResponse)
         })
     }

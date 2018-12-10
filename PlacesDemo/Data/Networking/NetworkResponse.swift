@@ -15,15 +15,11 @@ struct NetworkResponse: CustomDebugStringConvertible {
     let data: Data?
     /// NetworkError that contains error received from signal.
     let error: NetworkError?
-    // ToDo: Think of a smart way to handle this
-    /// Flag that determines whether the response is cashed or not.
-    let cashed: Bool
     
-    init(statusCode: Int?, data: Data?, error: NetworkError?, cashed: Bool = false) {
+    init(statusCode: Int?, data: Data?, error: NetworkError?) {
         self.statusCode = statusCode
         self.data = data
         self.error = error
-        self.cashed = cashed
     }
     
     /// A text description of the `NetworkResponse` that is suitable for debugging.
@@ -45,7 +41,6 @@ struct NetworkResponse: CustomDebugStringConvertible {
     /// Maps data received from the signal into a Decodable object.
     func map<D: Decodable>(_ type: D.Type) throws -> D? {
         guard let data = data else { return nil }
-        return cashed ? try PropertyListDecoder().decode(D.self, from: data) :
-                        try JSONDecoder().decode(D.self, from: data)
+        return try JSONDecoder().decode(D.self, from: data)
     }
 }

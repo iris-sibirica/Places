@@ -15,8 +15,8 @@ class PoisRemoteDataSource: PoisDataSource {
         self.service = service
     }
 
-    func pois(from page: Int, completion: @escaping (NetworkResponse) -> ()) {
-        let request = NetworkRequest(method: .get, path: API.BaseUrl.ExplorePath, parameters: ["page": "\(page)"]) //FIX
+    func pois(offset: Int, completion: @escaping (NetworkResponse) -> ()) {
+        let request = NetworkRequest(method: .get, path: API.BaseUrl.ExplorePath, parameters: ["offset": "\(offset)"])
         service.execute(request: request, completion: { result in
             completion(result)
         })

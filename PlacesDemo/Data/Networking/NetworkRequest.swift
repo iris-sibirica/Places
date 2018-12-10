@@ -49,7 +49,7 @@ class NetworkRequest: NetworkRequestProtocol {
     var method: HTTPMethod
     var parameters: [String: String]
     var headers: [String: Any]?
-    var cachePolicy: NSURLRequest.CachePolicy? = .reloadIgnoringLocalCacheData
+    var cachePolicy: NSURLRequest.CachePolicy? = .returnCacheDataElseLoad
     var timeout: TimeInterval?
     var dataType: DataType = .JSON
     

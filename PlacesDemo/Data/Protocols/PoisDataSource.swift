@@ -7,5 +7,5 @@
 //
 
 protocol PoisDataSource {
-    func pois(from page: Int, completion: @escaping (NetworkResponse) -> ())
+    func pois(offset: Int, completion: @escaping (NetworkResponse) -> ())
 }

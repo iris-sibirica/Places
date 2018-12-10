@@ -26,6 +26,7 @@ class OverviewViewController: UIViewController {
         super.viewDidLoad()
         
         setupTableView()
+        setupMapView()
         viewModel.getPois()
     }
     
@@ -33,10 +34,9 @@ class OverviewViewController: UIViewController {
         mapView.isHidden = !mapView.isHidden
         toggleButton.title = mapView.isHidden ? "Map" : "Table"
     }
-    
 }
 
-// MARK: - Private Methods
+// MARK: - UI Setup Methods
 
 extension OverviewViewController {
     private func setupTableView() {
@@ -47,18 +47,9 @@ extension OverviewViewController {
         tableView.prefetchDataSource = self
     }
     
-    private func centerMapOnLocation(location: CLLocation) {
-        let regionRadius: CLLocationDistance = 1000
-        let coordinateRegion =
-            MKCoordinateRegion(center: location.coordinate,
-                               latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
-    
-    private func addAnnotations() {
-        let annotations = viewModel.allPois.map { MapPoint(title: $0.name, locationName: $0.name, category: $0.categoryName, coordinate: CLLocationCoordinate2D(latitude: $0.location.lat, longitude: $0.location.lng)) }
-        mapView.addAnnotations(annotations)
-    }
+    private func setupMapView() {
+        let evenlyLocation = CLLocation(latitude: API.CurrentLocation.Latitude, longitude: API.CurrentLocation.Longitude)
+        centerMapOnLocation(location: evenlyLocation)    }
 }
 
 // MARK: - TableView Data Source Methods
@@ -70,8 +61,11 @@ extension OverviewViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier) as? TableViewCell
-        cell?.setTitleLabel(text: viewModel.poi(at: indexPath.row).name)
-        
+        if isLoadingCell(for: indexPath) {
+            cell?.setTitleLabel(text: "Loading...")
+        } else {
+            cell?.setTitleLabel(text: "\(indexPath.row + 1). " + viewModel.poi(at: indexPath.row).name)
+        }
         return cell!
     }
 }
@@ -88,7 +82,11 @@ extension OverviewViewController: UITableViewDelegate {
 // MARK: - TableView Data Source Prefetching Methods
 
 extension OverviewViewController: UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {}
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLoadingCell) {
+            viewModel.getPois()
+        }
+    }
 }
 
 // MARK: - Segues
@@ -112,15 +110,45 @@ extension OverviewViewController {
 
 extension OverviewViewController: OverviewViewModelDelegate {
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
-        //table view
-        tableView.reloadData()
-        // map view
-        let evenlyLocation = CLLocation(latitude: API.CurrentLocation.Latitude, longitude: API.CurrentLocation.Longitude)
-        centerMapOnLocation(location: evenlyLocation)
-        addAnnotations()
+        guard let newIndexPathsToReload = newIndexPathsToReload else {
+            //table view
+            tableView.reloadData()
+            // map view
+            addAnnotations()
+            return
+        }
+        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
+        tableView.reloadRows(at: indexPathsToReload, with: .automatic)
     }
     
     func onFetchFailed(with reason: String) {
         print("Fetch failed: \(reason)")
-    }  
+    }
+}
+
+// MARK: - Helper Methods
+
+private extension OverviewViewController {
+    func isLoadingCell(for indexPath: IndexPath) -> Bool {
+        return indexPath.row >= viewModel.currentCount
+    }
+    
+    func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
+        let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
+        let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
+        return Array(indexPathsIntersection)
+    }
+    
+    private func centerMapOnLocation(location: CLLocation) {
+        let regionRadius: CLLocationDistance = 1000
+        let coordinateRegion =
+            MKCoordinateRegion(center: location.coordinate,
+                               latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    private func addAnnotations() {
+        let annotations = viewModel.allPois.map { MapPoint(title: $0.name, locationName: $0.name, coordinate: CLLocationCoordinate2D(latitude: $0.location.lat, longitude: $0.location.lng)) }
+        mapView.addAnnotations(annotations)
+    }
 }

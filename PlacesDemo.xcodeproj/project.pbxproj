@@ -36,7 +36,7 @@
 		8EBED33C21BA26B3002FEB75 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED33B21BA26B3002FEB75 /* DetailsViewController.swift */; };
 		8EBED34321BA2ACE002FEB75 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED34221BA2ACE002FEB75 /* DetailsViewModel.swift */; };
 		8EBED34721BA2BBE002FEB75 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED34621BA2BBE002FEB75 /* Injectable.swift */; };
-		8EBED34921BA2D35002FEB75 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED34821BA2D35002FEB75 /* Helpers.swift */; };
+		8EBED34921BA2D35002FEB75 /* StoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED34821BA2D35002FEB75 /* StoryboardSegue.swift */; };
 		8EBED34C21BA2F57002FEB75 /* UIViewController+SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED34B21BA2F57002FEB75 /* UIViewController+SegueIdentifier.swift */; };
 		8EBED35121BA36AD002FEB75 /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBED35021BA36AD002FEB75 /* MapPoint.swift */; };
 		8EBED35721BA80E1002FEB75 /* ResponseError in Resources */ = {isa = PBXBuildFile; fileRef = 8EBED35621BA80E1002FEB75 /* ResponseError */; };
@@ -92,7 +92,7 @@
 		8EBED33B21BA26B3002FEB75 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		8EBED34221BA2ACE002FEB75 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		8EBED34621BA2BBE002FEB75 /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
-		8EBED34821BA2D35002FEB75 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		8EBED34821BA2D35002FEB75 /* StoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSegue.swift; sourceTree = "<group>"; };
 		8EBED34B21BA2F57002FEB75 /* UIViewController+SegueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SegueIdentifier.swift"; sourceTree = "<group>"; };
 		8EBED35021BA36AD002FEB75 /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		8EBED35621BA80E1002FEB75 /* ResponseError */ = {isa = PBXFileReference; explicitFileType = text.json; path = ResponseError; sourceTree = "<group>"; };
@@ -356,7 +356,7 @@
 		8EBED34A21BA2D3C002FEB75 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8EBED34821BA2D35002FEB75 /* Helpers.swift */,
+				8EBED34821BA2D35002FEB75 /* StoryboardSegue.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 				8EBED34721BA2BBE002FEB75 /* Injectable.swift in Sources */,
 				8E76516B21B5DCA100A297A0 /* Constants.swift in Sources */,
 				8E76518421B60E8300A297A0 /* PoisModule.swift in Sources */,
-				8EBED34921BA2D35002FEB75 /* Helpers.swift in Sources */,
+				8EBED34921BA2D35002FEB75 /* StoryboardSegue.swift in Sources */,
 				8EBED34C21BA2F57002FEB75 /* UIViewController+SegueIdentifier.swift in Sources */,
 				8EDF46B421BAABCC00F3C9C2 /* NetworkSessionProtocol.swift in Sources */,
 				8EBED35121BA36AD002FEB75 /* MapPoint.swift in Sources */,

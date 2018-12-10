@@ -11,5 +11,6 @@ import Foundation
 struct PoisResponse: Codable {
     let pois: [PointOfInterest]
     let hasMore: Bool
-    let page: Int
+    let offset: Int
+    let total: Int
 }

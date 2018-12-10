@@ -17,14 +17,7 @@ class PoisRepository: PoisDataSource {
         self.localDataSource = localDataSource
     }
     
-    func pois(from page: Int, completion: @escaping (NetworkResponse) -> ()) {
-        localDataSource.pois(from: 0, completion: { response in
-            if response.data == nil {
-                 self.remoteDataSource.pois(from: page, completion: completion)
-            } else {
-                //print(response.debugDescription)
-                completion(response)
-            }
-        })
+    func pois(offset: Int, completion: @escaping (NetworkResponse) -> ()) {
+        remoteDataSource.pois(offset: offset, completion: completion)
     }
 }

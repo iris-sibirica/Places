@@ -9,10 +9,8 @@
 import Foundation
 
 struct PointOfInterest: Codable {
-    let id: String
     let name: String
     let location: Location
-    let categoryName: String
 }
 
 struct Root: Codable {
@@ -21,8 +19,8 @@ struct Root: Codable {
 }
 
 struct Meta: Codable {
-    let code: Int
-    let requestID: String
+    let code: Int?
+    let requestID: String?
     
     enum CodingKeys: String, CodingKey {
         case code
@@ -34,28 +32,28 @@ struct Response: Codable {
     let warning: Warning?
     let suggestedRadius: Int?
     let headerLocation, headerFullLocation, headerLocationGranularity: String?
-    let totalResults: Int?
+    let totalResults: Int
     let suggestedBounds: SuggestedBounds?
     let groups: [Group]?
 }
 
 struct Group: Codable {
-    let type, name: String
+    let type, name: String?
     let items: [GroupItem]
 }
 
 struct GroupItem: Codable {
-    let reasons: Reasons
+    let reasons: Reasons?
     let venue: Venue
 }
 
 struct Reasons: Codable {
-    let count: Int
-    let items: [ReasonsItem]
+    let count: Int?
+    let items: [ReasonsItem]?
 }
 
 struct ReasonsItem: Codable {
-    let summary, type, reasonName: String
+    let summary, type, reasonName: String?
 }
 
 struct Venue: Codable {
@@ -67,13 +65,13 @@ struct Venue: Codable {
 
 struct Category: Codable {
     let id, name, pluralName, shortName: String
-    let icon: Icon
-    let primary: Bool
+    let icon: Icon?
+    let primary: Bool?
 }
 
 struct Icon: Codable {
-    let iconPrefix: String
-    let suffix: String
+    let iconPrefix: String?
+    let suffix: String?
     
     enum CodingKeys: String, CodingKey {
         case iconPrefix = "prefix"
@@ -82,19 +80,19 @@ struct Icon: Codable {
 }
 
 struct Location: Codable {
-    let address: String
+    let address: String?
     let crossStreet: String?
     let lat, lng: Double
-    let labeledLatLngs: [LabeledLatLng]
-    let distance: Int
-    let postalCode, cc, city, state: String
-    let country: String
+    let labeledLatLngs: [LabeledLatLng]?
+    let distance: Int?
+    let postalCode, cc, city, state: String?
+    let country: String?
     let formattedAddress: [String]
 }
 
 struct LabeledLatLng: Codable {
-    let label: String
-    let lat, lng: Double
+    let label: String?
+    let lat, lng: Double?
 }
 
 struct VenuePage: Codable {
@@ -102,13 +100,13 @@ struct VenuePage: Codable {
 }
 
 struct SuggestedBounds: Codable {
-    let ne, sw: Ne
+    let ne, sw: Ne?
 }
 
 struct Ne: Codable {
-    let lat, lng: Double
+    let lat, lng: Double?
 }
 
 struct Warning: Codable {
-    let text: String
+    let text: String?
 }
